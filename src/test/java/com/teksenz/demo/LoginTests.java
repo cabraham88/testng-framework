@@ -1,9 +1,27 @@
 package com.teksenz.demo;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 //no main method
 public class LoginTests {
+    @BeforeClass
+    public void beforeClass(){
+        System.out.println("before class method executed");
+    }
+    @AfterClass
+    public void afterClass(){
+        System.out.println("After class method executed");
+    }
+    @BeforeMethod//if we want to execute a method before each and every method
+    public void beforeMethod(){//any name for the method
+        System.out.println("Before method executed..");
+    }
+    @AfterMethod
+    public void afterMethod(){ //if we want to execute a method after each and every method
+        System.out.println("After method executed...");
+    }
+
     @Test(priority = 1)//prioritizing the method//@Test means this test is marking as test
     public void loginTest(){
         System.out.println("Login test with valid user and password");
